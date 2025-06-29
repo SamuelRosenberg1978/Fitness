@@ -2,7 +2,7 @@
       "relation": ["delegate_permission/common.handle_all_urls"],
       "target": {
         "namespace": "android_app",
-        "package_name": "Program.Fitness.My",
-        "sha256_cert_fingerprints": ["EE:D9:79:E2:AB:D5:5C:08:C1:F6:B8:3E:0C:8D:6E:5B:13:C0:D7:25:CB:C7:01:06:F3:51:54:15:2F:E7:FF:47"]
+        "package_name": "com.fitness.my",
+        "sha256_cert_fingerprints": ["F3:CF:D9:8D:D1:A3:0F:EC:15:A7:B0:41:39:AD:37:8A:C5:4A:58:F0:5B:DE:B0:FF:B6:74:8B:E8:3C:12:33:B0"]
       }
     }]
