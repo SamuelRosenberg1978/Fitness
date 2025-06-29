@@ -1,0 +1,25 @@
+{
+    "name": "Fitness Tracker - מעקב כושר",
+    "short_name": "Fitness Tracker",
+    "description": "מעקב כושר אישי עם תוכנית אימונים מותאמת",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#667eea",
+    "theme_color": "#667eea",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQpIi8+CjxwYXRoIGQ9Ik05NiA0OEM3OC4zIDQ4IDY0IDYyLjMgNjQgODB2MzJjMCAxNy43IDE0LjMgMzIgMzIgMzJzMzItMTQuMyAzMi0zMlY4MEMxMjggNjIuMyAxMTMuNyA0OCA5NiA0OHoiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNODAgNzJjMCA0LjQgMy42IDggOCA4czgtMy42IDgtOC0zLjYtOC04LTgtOC00LjQtMy42LTgtOHoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik04OCAxMjBjLTQuNCAwLTggMy42LTggOHMzLjYgOCA4IDggOC0zLjYgOC04LTMuNi04LTgtOHoiIGZpbGw9IndoaXRlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50IiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM2NjdlZWE7c3RvcC1vcGFjaXR5OjEiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNzY0YmEyO3N0b3Atb3BhY2l0eToxIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+",
+            "sizes": "192x192",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9InVybCgjZ3JhZGllbnQpIi8+CjxwYXRoIGQ9Ik0yNTYgMTI4QzE5MiAxMjggMTQ0IDE3NiAxNDQgMjQwdjg1LjMzYzAgMzQuNjcgMjcuMzMgNjIuNjcgNjIgNjIuNjdzNjItMjggNjItNjIuNjdWMjQwYzAtMzUuMzMgMjguNjctNjQgNjQtNjRzNjQgMjguNjcgNjQgNjR2ODUuMzNjMCAzNC42NyAyNy4zMyA2Mi42NyA2MiA2Mi42N3M2Mi0yOCA2Mi02Mi42N1YyNDBDNDY4IDE3NiA0MjAgMTI4IDM1NiAxMjhIMjU2eiIgZmlsbD0id2hpdGUiIGZpbGwtb3BhY2l0eT0iMC45Ii8+CjxwYXRoIGQ9Ik0yMTQgMTkyYzAgMTEuNzggOS41NiAyMS4zMyAyMS4zMyAyMS4zM3MyMS4zMy05LjU2IDIxLjMzLTIxLjMzLTkuNTYtMjEuMzMtMjEuMzMtMjEuMzRTMjE0IDE4MC4yIDIxNCAxOTJ6IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjc2IDMyMGMtMTEuNzggMC0yMS4zMyA5LjU2LTIxLjMzIDIxLjMzczkuNTYgMjEuMzMgMjEuMzMgMjEuMzMgMjEuMzMtOS41NiAyMS4zMy0yMS4zM1MyODcuOCAzMjAgMjc2IDMyMHoiIGZpbGw9IndoaXRlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50IiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM2NjdlZWE7c3RvcC1vcGFjaXR5OjEiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNzY0YmEyO3N0b3Atb3BhY2l0eToxIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+",
+            "sizes": "512x512",
+            "type": "image/svg+xml"
+        }
+    ],
+    "categories": ["health", "fitness", "lifestyle"],
+    "lang": "he",
+    "dir": "rtl"
+} 

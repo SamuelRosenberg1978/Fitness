@@ -1,0 +1,29 @@
+{
+  "name": "fitness-tracker",
+  "version": "1.0.0",
+  "description": "Personal Fitness Tracking App",
+  "main": "index.html",
+  "scripts": {
+    "build": "npm run build:web",
+    "build:web": "echo 'Web app is ready'",
+    "build:android": "npm run build && npx cap sync android && npx cap open android",
+    "build:ios": "npm run build && npx cap sync ios && npx cap open ios",
+    "add:android": "npx cap add android",
+    "add:ios": "npx cap add ios",
+    "sync": "npx cap sync",
+    "serve": "npx cap serve"
+  },
+  "keywords": ["fitness", "tracker", "pwa", "mobile"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@capacitor/cli": "^5.0.0",
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/ios": "^5.0.0"
+  },
+  "dependencies": {
+    "@capacitor/core": "^5.0.0",
+    "@capacitor/app": "^5.0.0",
+    "@capacitor/storage": "^5.0.0"
+  }
+} 

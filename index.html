@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker - מעקב כושר</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>💪 מעקב כושר</h1>
+            <div class="header-actions">
+                <button id="addWorkoutBtn" class="btn-primary">+ אימון חדש</button>
+                <button id="statsBtn" class="btn-secondary">📊 סטטיסטיקות</button>
+            </div>
+        </header>
+
+        <!-- Main Navigation -->
+        <nav class="main-nav">
+            <button class="nav-btn active" data-view="dashboard">🏠 דשבורד</button>
+            <button class="nav-btn" data-view="workouts">💪 אימונים</button>
+            <button class="nav-btn" data-view="history">📅 היסטוריה</button>
+            <button class="nav-btn" data-view="settings">⚙️ הגדרות</button>
+        </nav>
+
+        <!-- Dashboard View -->
+        <div id="dashboard" class="view active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>אימונים החודש</h3>
+                    <div class="stat-value" id="monthlyWorkouts">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>אימון הבא</h3>
+                    <div class="stat-value" id="nextWorkout">אימון A</div>
+                </div>
+                <div class="stat-card">
+                    <h3>משקל ממוצע</h3>
+                    <div class="stat-value" id="avgWeight">0 ק"ג</div>
+                </div>
+                <div class="stat-card">
+                    <h3>סך חזרות</h3>
+                    <div class="stat-value" id="totalReps">0</div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h3>פעולות מהירות</h3>
+                <div class="action-buttons">
+                    <button class="action-btn" data-workout="A">
+                        <span class="action-icon">💪</span>
+                        <span>אימון A - פלג גוף עליון</span>
+                    </button>
+                    <button class="action-btn" data-workout="B">
+                        <span class="action-icon">🦵</span>
+                        <span>אימון B - פלג גוף תחתון</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="recent-workouts">
+                <h3>אימונים אחרונים</h3>
+                <div id="recentWorkoutsList" class="workouts-list">
+                    <!-- Recent workouts will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Workouts View -->
+        <div id="workouts" class="view">
+            <div class="workout-templates">
+                <h3>תבניות אימון</h3>
+                
+                <!-- Workout A Template -->
+                <div class="workout-template" data-workout="A">
+                    <div class="template-header">
+                        <h4>💪 אימון A – פלג גוף עליון</h4>
+                        <button class="start-workout-btn" data-workout="A">התחל אימון</button>
+                    </div>
+                    <div class="exercises-list">
+                        <div class="exercise-item">
+                            <span class="exercise-name">לחיצות חזה</span>
+                            <span class="machine">מכשירים 81, 84</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">פרפר</span>
+                            <span class="machine">מכשירים 77, 78</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">יד אחורית</span>
+                            <span class="machine">מכשיר 85</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">גב פולי עליון</span>
+                            <span class="machine">מכשירים 4, 5, 6</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">חתירה</span>
+                            <span class="machine">מכשיר 79</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">כתפיים – לחיצה</span>
+                            <span class="machine">מכשיר 82</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">הרחקות כתף</span>
+                            <span class="machine">מכשיר 59</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">יד קדמית פטישים</span>
+                            <span class="machine">-</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">יד קדמית סופינציה</span>
+                            <span class="machine">-</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">כיסא רומי</span>
+                            <span class="machine">מכשיר 23 (2 סטים × 20 חזרות)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workout B Template -->
+                <div class="workout-template" data-workout="B">
+                    <div class="template-header">
+                        <h4>🦵 אימון B – פלג גוף תחתון</h4>
+                        <button class="start-workout-btn" data-workout="B">התחל אימון</button>
+                    </div>
+                    <div class="exercises-list">
+                        <div class="exercise-item">
+                            <span class="exercise-name">סקוואט – סמית משין</span>
+                            <span class="machine">סמית משין</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">כפיפת ברך</span>
+                            <span class="machine">מכשיר 74</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">מקרבי ירך</span>
+                            <span class="machine">מכשיר 92</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">מרחיקי ירך</span>
+                            <span class="machine">מכשיר 93</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">עליות תאומים</span>
+                            <span class="machine">מכשיר 71</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">לחיצות רגליים</span>
+                            <span class="machine">מכשיר 71</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abdominal Workout -->
+                <div class="workout-template abdominal">
+                    <div class="template-header">
+                        <h4>🔥 בטן – בסוף כל אימון</h4>
+                    </div>
+                    <div class="exercises-list">
+                        <div class="exercise-item">
+                            <span class="exercise-name">פלאנק סטטי</span>
+                            <span class="machine">1 סט של דקה</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">בטן אלכסונים על מזרן</span>
+                            <span class="machine">2 סטים × 20 חזרות</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">הנפות רגליים</span>
+                            <span class="machine">3 סטים × 20 חזרות</span>
+                        </div>
+                        <div class="exercise-item">
+                            <span class="exercise-name">כפיפות בטן</span>
+                            <span class="machine">3 סטים × 20 חזרות</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- History View -->
+        <div id="history" class="view">
+            <div class="history-filters">
+                <select id="historyFilter">
+                    <option value="all">כל האימונים</option>
+                    <option value="A">אימון A</option>
+                    <option value="B">אימון B</option>
+                </select>
+                <input type="date" id="historyDate" />
+            </div>
+            <div id="historyList" class="history-list">
+                <!-- History items will be populated here -->
+            </div>
+        </div>
+
+        <!-- Settings View -->
+        <div id="settings" class="view">
+            <div class="settings-section">
+                <h3>הגדרות כליות</h3>
+                <div class="setting-item">
+                    <label>שם המשתמש</label>
+                    <input type="text" id="userName" placeholder="הכנס את שמך">
+                </div>
+                <div class="setting-item">
+                    <label>משקל התחלתי (ק"ג)</label>
+                    <input type="number" id="startWeight" placeholder="0">
+                </div>
+                <div class="setting-item">
+                    <label>מטרת משקל (ק"ג)</label>
+                    <input type="number" id="targetWeight" placeholder="0">
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <h3>גיבוי ושחזור</h3>
+                <button id="exportData" class="btn-secondary">ייצא נתונים</button>
+                <button id="importData" class="btn-secondary">ייבא נתונים</button>
+                <input type="file" id="importFile" accept=".json" style="display: none;">
+            </div>
+
+            <div class="settings-section">
+                <h3>עריכת תוכנית אימון</h3>
+                <div class="workout-editor">
+                    <div class="editor-tabs">
+                        <button class="editor-tab active" data-workout="A">אימון A</button>
+                        <button class="editor-tab" data-workout="B">אימון B</button>
+                    </div>
+                    
+                    <div id="workoutAEditor" class="editor-content active">
+                        <div class="exercise-list" id="workoutAExercises">
+                            <!-- Exercises will be populated here -->
+                        </div>
+                        <button id="addExerciseA" class="btn-secondary">+ הוסף תרגיל</button>
+                    </div>
+                    
+                    <div id="workoutBEditor" class="editor-content">
+                        <div class="exercise-list" id="workoutBExercises">
+                            <!-- Exercises will be populated here -->
+                        </div>
+                        <button id="addExerciseB" class="btn-secondary">+ הוסף תרגיל</button>
+                    </div>
+                    
+                    <div class="editor-actions">
+                        <button id="saveWorkoutTemplate" class="btn-primary">שמור שינויים</button>
+                        <button id="resetWorkoutTemplate" class="btn-secondary">אפס לברירת מחדל</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>אודות</h3>
+                <p>גרסה 1.0.0</p>
+                <p>מעקב כושר אישי</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Workout Modal -->
+    <div id="workoutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">אימון חדש</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="workoutExercises" class="workout-exercises">
+                    <!-- Exercises will be populated here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="saveWorkout" class="btn-primary">שמור אימון</button>
+                <button id="cancelWorkout" class="btn-secondary">ביטול</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise Set Modal -->
+    <div id="setModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="setModalTitle">הוסף סט</h3>
+                <button class="close-btn" id="closeSetModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="set-inputs">
+                    <div class="input-group">
+                        <label>משקל (ק"ג)</label>
+                        <input type="number" id="setWeight" min="0" step="0.5">
+                    </div>
+                    <div class="input-group">
+                        <label>חזרות</label>
+                        <input type="number" id="setReps" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label>הערות</label>
+                        <textarea id="setNotes" placeholder="הערות על הסט..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="addSet" class="btn-primary">הוסף סט</button>
+                <button id="cancelSet" class="btn-secondary">ביטול</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Register Service Worker for PWA functionality
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html> 
